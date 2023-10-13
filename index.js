@@ -1,7 +1,35 @@
 const inquirer = require("inquirer");
 const { Triangle, Circle, Square } = require("./lib/shapes");
 
-class Svg {}
+class Svg {
+  constructor() {
+    this.text = "";
+    this.textColor = "";
+    this.shape = "";
+    this.shapeColor = "";
+  }
+  render() {
+    <svg
+      version="1.1"
+      width="300"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      ${this.shape}
+    </svg>;
+  }
+    setText(text) {
+    }
+    setTextColor(textColor) {
+
+    }
+    setShape(shape) {
+
+    }
+    setShapeColor(shapeColor) {
+
+    }
+}
 
 const questions = [
   {
