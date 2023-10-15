@@ -18,10 +18,12 @@ class Svg {
       ${this.shape}
     </svg>;`;
   }
-  setText(text) {}
-  setTextColor(textColor) {}
-  setShape(shape) {}
-  setShapeColor(shapeColor) {}
+  setText(text, textColor) {
+
+  }
+  setShape(shape, shapeColor) {
+    
+  }
 }
 
 const questions = [
