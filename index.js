@@ -9,26 +9,19 @@ class Svg {
     this.shapeColor = "";
   }
   render() {
-    <svg
+    return `<svg
       version="1.1"
       width="300"
       height="200"
       xmlns="http://www.w3.org/2000/svg"
     >
       ${this.shape}
-    </svg>;
+    </svg>;`;
   }
-    setText(text) {
-    }
-    setTextColor(textColor) {
-
-    }
-    setShape(shape) {
-
-    }
-    setShapeColor(shapeColor) {
-
-    }
+  setText(text) {}
+  setTextColor(textColor) {}
+  setShape(shape) {}
+  setShapeColor(shapeColor) {}
 }
 
 const questions = [
@@ -56,3 +49,13 @@ const questions = [
       "Please enter a color keyword or a hexadecimal number for the shape color.",
   },
 ];
+
+function init() {
+  console.log("started");
+  inquirer
+    .prompt(questions)
+    .then((res) => console.log(res))
+    .then(() => console.log("finished"));
+}
+
+init();
