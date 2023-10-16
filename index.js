@@ -1,12 +1,13 @@
 const inquirer = require("inquirer");
 const { Triangle, Circle, Square } = require("./lib/shapes");
+const { writeFile } = require('fs').promises
 
 class Svg {
-  constructor() {
-    this.text = "";
-    this.textColor = "";
-    this.shape = "";
-    this.shapeColor = "";
+  constructor(text, textColor, shape) {
+    this.text = text;
+    this.textColor = textColor;
+    this.shape = shape;
+
   }
   render() {
     return `<svg
@@ -21,8 +22,8 @@ class Svg {
   setText(text, textColor) {
 
   }
-  setShape(shape, shapeColor) {
-    
+  setShape(shape) {
+    this.shape = shape.render()
   }
 }
 
@@ -52,11 +53,22 @@ const questions = [
   },
 ];
 
+function writeSVGFile(name, data) {
+  const newData = JSON.stringify(data)
+  writeFile(name, newData)
+}
+
+function generateLogo(answers) {
+  const newAns = JSON.parse(answers)
+  console.log(newAns.text, newAns.textColor, newAns.shape);
+  const logo = new Svg(newAns.text, newAns.textColor, newAns.shape)
+  return logo
+}
+
 function init() {
   console.log("started");
-  inquirer
-    .prompt(questions)
-    .then((res) => console.log(res))
+  inquirer.prompt(questions)
+    .then((res) => writeSVGFile('logo.svg', generateLogo(JSON.stringify(res))))
     .then(() => console.log("finished"));
 }
 
