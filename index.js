@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const Triangle = require('./lib/tri')
 const Circle = require('./lib/circ')
-const Square = require('./lib/shapes')
+const Square = require('./lib/sqre')
 const { writeFile } = require("fs").promises;
 
 class Svg {
