@@ -47,15 +47,13 @@ const questions = [
 ];
 
 function writeSVGFile(name, data) {
-  const newData = JSON.stringify(data);
-  console.log(newData)
-  writeFile(name, newData);
+  writeFile(name, data);
 }
 
 function generateLogo(answers) {
   const logo = new Svg(answers.text, answers.textColor, answers.shape, answers.shapeColor);
   logo.setText(answers.text, answers.textColor)
-  logo.setShape(shapeSelectHandler(answers.shape,answers.shapeColor))
+  logo.setShape(shapeSelectHandler(answers.shape, answers.shapeColor))
   return logo.render()
 }
 
