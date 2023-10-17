@@ -7,7 +7,7 @@ describe("Square", () => {
       let color = "green";
       square.setColor(color);
       expect(square.render()).toEqual(
-        `<rect width='100' height='100'  fill='${color}'>`
+        `<rect x=100 y=15 width='150' height='150'  fill='${color}'/>`
       );
     });
   });
