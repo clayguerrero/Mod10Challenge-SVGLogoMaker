@@ -47,6 +47,19 @@ const questions = [
   },
 ];
 
+
+function validateAns(answers) {
+  if (answers.text.length > 3) {
+    console.log('You may only enter up to 3 characters for logo text.')
+    return
+  }
+  else if ((answers.text.length < 1) || (answers.text = ' ')) {
+    console.log('Please enter at least 1 character for logo text.')
+    return
+  }
+  else return writeSVGFile("logo.svg", generateLogo(res));
+}
+
 function writeSVGFile(name, data) {
   writeFile(name, data);
 }
@@ -78,7 +91,7 @@ function shapeSelectHandler(shape,color) {
 function init() {
   inquirer
     .prompt(questions)
-    .then((res) => writeSVGFile("logo.svg", generateLogo(res)))
+    .then((res) => validateAns(res))
 }
 
 init();
