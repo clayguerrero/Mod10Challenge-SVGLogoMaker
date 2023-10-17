@@ -49,15 +49,16 @@ const questions = [
 
 
 function validateAns(answers) {
+
   if (answers.text.length > 3) {
     console.log('You may only enter up to 3 characters for logo text.')
     return
   }
-  else if ((answers.text.length < 1) || (answers.text = ' ')) {
+  else if ((answers.text.length < 1) || (answers.text === ' ')) {
     console.log('Please enter at least 1 character for logo text.')
     return
   }
-  else return writeSVGFile("logo.svg", generateLogo(res));
+  else return writeSVGFile("logo.svg", generateLogo(answers));
 }
 
 function writeSVGFile(name, data) {
