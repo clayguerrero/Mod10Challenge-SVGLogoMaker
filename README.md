@@ -17,9 +17,9 @@
   In order to run the  test files run 'npm test' in the terminal.
 
   ## Images
-  The following is an example of the prompts with a given input.
+  The following is an example of the prompts with a given input. \
   ![an example of what could be passed in the prompts](./images/inputExample.PNG)
-  Here is what the SVG of that given input would look like.
+  Here is what the SVG of that given input would look like. \
   ![an example of the SVG would look like](./images/exampleOutput.PNG)
-  Additionally this image shows the newly generated SVG file.
+  Additionally this image shows the newly generated SVG file. \
   ![newly generated file](./images/newFileGenerated.PNG)
